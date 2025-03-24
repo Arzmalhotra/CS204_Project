@@ -47,7 +47,7 @@ void load_program_memory()
 {
 	FILE *fp;
   	unsigned int address,word;
-  	fp = fopen("machine_code.mc", "r");
+  	fp = fopen("factorial.mc", "r");
   	if(fp == NULL)
   	{
     	printf("Error opening input mem file\n");
@@ -76,7 +76,7 @@ void write_data_memory()
 
   	FILE * fp;
   	unsigned int i;
-  	fp = fopen("data_out.mem", "w");
+  	fp = fopen("factorial.mem", "w");
   	if(fp == NULL) 
   	{
     	printf("Error opening dataout.mem file for writing\n");
