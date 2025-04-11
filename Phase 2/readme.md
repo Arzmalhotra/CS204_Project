@@ -1,7 +1,3 @@
-Below is a concise README formatted for GitHub:
-
----
-
 # Machine Code Simulator and GUI
 
 A simple project that simulates a processor executing machine code (e.g., a factorial function) and displays the results. The C++ simulator reads instructions from a file, processes them, and writes the final register and memory states to an output file. A Python GUI built with Tkinter enables quick compilation and execution of the simulator with a user-friendly interface.
@@ -24,11 +20,11 @@ A simple project that simulates a processor executing machine code (e.g., a fact
 1. **C++ Simulator:**
    - Compile:  
      ```bash
-     g++ phase2.cpp -o simulator
+     g++ phase2.cpp
      ```
    - Run:  
      ```bash
-     ./simulator
+     ./a.exe
      ```
    - Check `data_out.mem` for results.
 
@@ -44,6 +40,3 @@ A simple project that simulates a processor executing machine code (e.g., a fact
 - **C++ Simulator:** A C++ compiler (e.g., `g++`)
 - **Python GUI:** Python 3.x with Tkinter
 
----
-
-Feel free to adjust any details as necessary for your repository.
