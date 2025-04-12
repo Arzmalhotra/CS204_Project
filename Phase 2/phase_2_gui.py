@@ -48,7 +48,7 @@ class CppRunnerGUI(Frame):
         self.output_text.pack()
 
     def compile_and_run_cpp_program(self):
-        compile_process = subprocess.Popen(["g++", "phase2.cpp", "-o", "a.exe"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        compile_process = subprocess.Popen(["g++", "phase2.cpp", "-o", "./a.exe"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
         # Wait for the compilation process to finish and capture the output and error messages (if any)
         compile_output, compile_error = compile_process.communicate()
@@ -59,7 +59,7 @@ class CppRunnerGUI(Frame):
 
         # If the compilation was successful, execute the compiled program
         if compile_process.returncode == 0:
-            run_process = subprocess.Popen(["a.exe"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            run_process = subprocess.Popen(["./a.exe"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
             # Wait for the execution process to finish and capture the output and error messages (if any)
             run_output, run_error = run_process.communicate()
@@ -72,73 +72,73 @@ app = Application(master=root)
 app = CppRunnerGUI(master=root)
 
 
-output = Tk()
-output.title("Output files")
-output.geometry("600x800")
+# output = Tk()
+# output.title("Output files")
+# output.geometry("600x800")
 
-main_frame = Frame(output)
-main_frame.pack(fill=BOTH, expand=1)
+# main_frame = Frame(output)
+# main_frame.pack(fill=BOTH, expand=1)
 
-my_canvas = Canvas(main_frame)
-my_canvas.pack(side=LEFT, fill=BOTH, expand=1)
+# my_canvas = Canvas(main_frame)
+# my_canvas.pack(side=LEFT, fill=BOTH, expand=1)
 
-my_scrollbar = ttk.Scrollbar(main_frame, orient = VERTICAL, command= my_canvas.yview)
-my_scrollbar.pack(side=RIGHT, fill=Y)
+# my_scrollbar = ttk.Scrollbar(main_frame, orient = VERTICAL, command= my_canvas.yview)
+# my_scrollbar.pack(side=RIGHT, fill=Y)
 
-my_canvas.configure(yscrollcommand = my_scrollbar.set)
-my_canvas.bind('<Configure>', lambda e: my_canvas.configure(scrollregion = my_canvas.bbox("all")))
+# my_canvas.configure(yscrollcommand = my_scrollbar.set)
+# my_canvas.bind('<Configure>', lambda e: my_canvas.configure(scrollregion = my_canvas.bbox("all")))
 
-second_frame = Frame(my_canvas)
+# second_frame = Frame(my_canvas)
 
-my_canvas.create_window((0,0), window = second_frame, anchor = "nw")
+# my_canvas.create_window((0,0), window = second_frame, anchor = "nw")
 
 # function to open memory file
-def open_memory_file():
-    with open("Memory_file.txt", 'r') as f:
-        contents1 = f.read()
-        text1.delete('1.0', END)
-        text1.insert(END, contents1)
+# def open_memory_file():
+#     with open("Memory_file.txt", 'r') as f:
+#         contents1 = f.read()
+#         text1.delete('1.0', END)
+#         text1.insert(END, contents1)
 
-open_button1 = Button(second_frame, text="Open Memory File", command=open_memory_file)
-open_button1.pack()
-text1 = Text(second_frame, height =20, width=60, bg = "light yellow" )
-text1.pack()
+# open_button1 = Button(second_frame, text="Open Memory File", command=open_memory_file)
+# open_button1.pack()
+# text1 = Text(second_frame, height =20, width=60, bg = "light yellow" )
+# text1.pack()
 
-# function to open register file with decimal values
-def open_register_file_dec():
-    with open("register_file_dec.txt", 'r') as f:
-        contents2 = f.read()
-        text2.delete('1.0', END)
-        text2.insert(END, contents2)
+# # function to open register file with decimal values
+# def open_register_file_dec():
+#     with open("register_file_dec.txt", 'r') as f:
+#         contents2 = f.read()
+#         text2.delete('1.0', END)
+#         text2.insert(END, contents2)
 
-open_button2 = Button(second_frame, text="Open Register File (dec)", command=open_register_file_dec)
-open_button2.pack()
-text2 = Text(second_frame, height =20, width=60, bg = "light green")
-text2.pack()
+# open_button2 = Button(second_frame, text="Open Register File (dec)", command=open_register_file_dec)
+# open_button2.pack()
+# text2 = Text(second_frame, height =20, width=60, bg = "light green")
+# text2.pack()
 
 # function to open register file with hexadecimal values
-def open_register_file_hex():
-    with open("register_file_hex.txt", 'r') as f:
-        contents3 = f.read()
-        text3.delete('1.0', END)
-        text3.insert(END, contents3)
+# def open_register_file_hex():
+#     with open("register_file_hex.txt", 'r') as f:
+#         contents3 = f.read()
+#         text3.delete('1.0', END)
+#         text3.insert(END, contents3)
 
-open_button3 = Button(second_frame, text="Open Register File (hex)", command=open_register_file_hex)
-open_button3.pack()
-text3 = Text(second_frame, height =20, width=60, bg = "light yellow")
-text3.pack()
+# open_button3 = Button(second_frame, text="Open Register File (hex)", command=open_register_file_hex)
+# open_button3.pack()
+# text3 = Text(second_frame, height =20, width=60, bg = "light yellow")
+# text3.pack()
 
 # function to open terminal file
-def open_terminal_file():
-    with open("terminal.txt", 'r') as f:
-        contents4 = f.read()
-        text4.delete('1.0', END)
-        text4.insert(END, contents4)
+# def open_terminal_file():
+#     with open("terminal.txt", 'r') as f:
+#         contents4 = f.read()
+#         text4.delete('1.0', END)
+#         text4.insert(END, contents4)
 
-open_button4 = Button(second_frame, text="Open Terminal File", command=open_terminal_file)
-open_button4.pack()
-text4 = Text(second_frame, height =20, width=80, bg = "light green")
-text4.pack()
+# open_button4 = Button(second_frame, text="Open Terminal File", command=open_terminal_file)
+# open_button4.pack()
+# text4 = Text(second_frame, height =20, width=80, bg = "light green")
+# text4.pack()
 
 # Adding the block diagram of the five pipeline stages
 # photo1 = PhotoImage(file = "pipeline.png")
@@ -146,6 +146,6 @@ text4.pack()
 # pipelining_label.pack()
 
 
-output.mainloop()
+# output.mainloop()
 app.mainloop()
 root.mainloop()

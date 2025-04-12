@@ -1021,12 +1021,12 @@ int main()
 		if(IR == 0xEF000011)
 			break;
 		decode();
-		//cout<<"Control_line:"<<Control_line<<endl;
-		//cout << "Ra:" << Ra << " Rb:" << Rb << endl;
+		//cout<<"Control_line: "<<Control_line<<endl;
+		//cout << "Ra: " << Ra << " Rb: " << Rb << endl;
 		execute();
 		memory_access();
 		writeback();
-		cout << reg[10]<<" Ry:"<<Ry<<" PC:"<<PC<<" Rz:"<<Rz<<" Control:"<<Control_line<<"reg2: "<<reg[2]<<endl;
+		cout << reg[10]<<" Ry: "<<Ry<<" PC:"<<PC<<" Rz:"<<Rz<<" Control:"<<Control_line<<" reg2: "<<reg[2]<<endl;
 		clock_cycles++;	
 	}
 	write_data_memory();
